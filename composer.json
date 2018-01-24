@@ -18,12 +18,5 @@
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Phpno1\\Repository\\providers\\RepositoryServiceProvider"
-            ]
-        }
     }
 }
