@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Phpno1\\Repository\\RepositoryServiceProvider"
+                "Phpno1\\Repository\\providers\\RepositoryServiceProvider"
             ]
         }
     }
