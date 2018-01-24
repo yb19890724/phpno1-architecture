@@ -13,7 +13,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //加载配置文件和语言包
          $this->mergeConfigFrom(__DIR__.'/../config/repository.php', 'repository');
          $this->loadTranslationsFrom(__DIR__ . '/../lang', 'repository');
     }
