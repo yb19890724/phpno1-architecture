@@ -28,18 +28,18 @@ ServiceProvider will be attached automatically
 
 ### Phpno1\Repository\Contracts\IRepository;
 
--function entity();
--function all();
--function find(int $id);
--function first();
--function count();
--function findWhere(...$condition);
--function findWhereFirst(...$condition);
--function findWhereCount(...$condition);
--function paginate(int $perPage = 10);
--function create(array $properties);
--function update(int $id, array $properties);
--function delete(int $id);
--function withCriteria(...$criteria);
--function toEntity();
--function toRepository(Builder $entity);
+- function entity();
+- function all();
+- function find(int $id);
+- function first();
+- function count();
+- function findWhere(...$condition);
+- function findWhereFirst(...$condition);
+- function findWhereCount(...$condition);
+- function paginate(int $perPage = 10);
+- function create(array $properties);
+- function update(int $id, array $properties);
+- function delete(int $id);
+- function withCriteria(...$criteria);
+- function toEntity();
+- function toRepository(Builder $entity);
