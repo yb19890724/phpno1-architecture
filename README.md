@@ -27,6 +27,7 @@ In your `config/app.php` add `Phpno1\Repository\providers\RepositoryServiceProvi
 ## Usage
 
 ```php
+<?php
 
 namespace App;
 
@@ -40,6 +41,7 @@ class Test extends Model
 
 #### create repository
 ```php
+<?php
 
 namespace App\Repositories\Eloquent;
 use App\Test;
@@ -137,6 +139,7 @@ class TestRepositoryEloquent extends AbstractRepository
 ## Use methods
 
 ```php
+<?php
 
 namespace App\Http\Controllers;
 
