@@ -24,6 +24,19 @@ ServiceProvider will be attached automatically
 ],
 ```
 
+#### create repository
+```php
+
+namespace App\Repositories\Eloquent;
+
+use App\Repositories\AbstractRepository;
+
+class TestRepositoryEloquent extends AbstractRepository
+{
+
+}
+```
+
 ## Methods
 
 ### Phpno1\Repository\Contracts\IRepository;
