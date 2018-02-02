@@ -1,4 +1,4 @@
-# -phpno1-repository
+# phpno1-repository
 
 
 Installation
@@ -75,6 +75,60 @@ class TestRepositoryEloquent extends AbstractRepository
 - function toEntity();
 - function toRepository(Builder $entity);
 
+### Phpno1\Repository\Eloquent;
+
+
+  ```php
+    $this->repository->all();
+  ```
+
+  ```php
+    $this->repository->find(int $id);
+  ```
+
+  ```php
+    $this->repository->first();
+  ```
+
+  ```php
+    $this->repository->count();
+  ```
+
+  ```php
+    $this->repository->findWhere(...$condition);
+  ```
+
+  ```php
+    $this->repository->findWhereFirst(...$condition);
+  ```
+
+  ```php
+    $this->repository->findWhereCount(...$condition);
+  ```
+
+  ```php
+    $this->repository->paginate(int $perPage = 10);
+  ```
+
+  ```php
+    $this->repository->create(array $properties);
+  ```
+
+  ```php
+    $this->repository->update(int $id, array $properties);
+  ```
+
+  ```php
+    $this->repository->delete(int $id);
+  ```
+
+  ```php
+    $this->repository->withCriteria(...$criteria);
+  ```
+
+  ```php
+    $this->repository->toEntity(); function toRepository(Builder $entity);
+  ```
 
 ## Use methods
 
