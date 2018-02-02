@@ -24,7 +24,7 @@ In your `config/app.php` add `Phpno1\Repository\providers\RepositoryServiceProvi
 ],
 ```
 
-##Usage
+## Usage
 
 ```php
 
