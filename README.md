@@ -15,7 +15,7 @@ ServiceProvider will be attached automatically
 
 #### Other
 
-增加配置 `config/app.php` add `Phpno1\Repository\providers\RepositoryServiceProvider::class` to the end of the `providers` array:
+In your `config/app.php` add `Phpno1\Repository\providers\RepositoryServiceProvider::class` to the end of the `providers` array:
 
 ```php
 'providers' => [
@@ -24,16 +24,34 @@ ServiceProvider will be attached automatically
 ],
 ```
 
+##Usage
+
+```php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Test extends Model
+{
+
+}
+```
+
 #### create repository
 ```php
 
 namespace App\Repositories\Eloquent;
+use App\Test;
 
 use App\Repositories\AbstractRepository;
 
 class TestRepositoryEloquent extends AbstractRepository
 {
-
+    public function entity()
+    {
+            return Test::class;
+    }
 }
 ```
 
@@ -56,3 +74,33 @@ class TestRepositoryEloquent extends AbstractRepository
 - function withCriteria(...$criteria);
 - function toEntity();
 - function toRepository(Builder $entity);
+
+
+## Use methods
+
+```php
+
+namespace App\Http\Controllers;
+
+use App\Repositories\Eloquent\TestRepository;
+
+class TestController extends Controller
+{
+
+    /**
+     * @var TestRepository
+     */
+    protected $repository;
+
+    public function __construct(TestRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    public function tests()
+    {
+        $this->repository->all();
+    }
+}
+
+```
