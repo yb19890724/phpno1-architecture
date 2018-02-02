@@ -1,4 +1,4 @@
-# -phpno1-repository
+# phpno1-repository
 
 
 Installation
@@ -46,7 +46,7 @@ use App\Test;
 
 use App\Repositories\AbstractRepository;
 
-class TestRepositoryEloquent extends AbstractRepository
+class TestRepositoryEloquent extends AbstractRepository implements ITestRepository
 {
     public function entity()
     {
