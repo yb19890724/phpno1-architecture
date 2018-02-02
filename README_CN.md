@@ -1,10 +1,7 @@
 # phpno1-repository
 
-<a href="https://github.com/yb19890724/phpno1-repository/README.md">English description</a></p>
-<a href="https://github.com/overtrue/laravel-lang/blob/master/README_CN.md">中文说明</a></p>
-Installation
-Composer
-Execute the following command to get the latest version of the package:
+composer 安装
+执行以下命令获取包的最新版本:
 
 composer require phpno1/repository
 
@@ -134,7 +131,7 @@ class TestRepositoryEloquent extends AbstractRepository
   ```php
     $this->repository->toRepository(Builder $entity);
   ```
-
+  
 ## Use methods
 
 ```php
