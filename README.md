@@ -1,7 +1,6 @@
 # phpno1-repository
 
-<a href="https://github.com/yb19890724/phpno1-repository/README.md">English description</a></p>
-<a href="https://github.com/overtrue/laravel-lang/blob/master/README_CN.md">中文说明</a></p>
+<a href="https://github.com/yb19890724/phpno1-repository/README_CN.md">中文说明</a></p>
 Installation
 Composer
 Execute the following command to get the latest version of the package:
