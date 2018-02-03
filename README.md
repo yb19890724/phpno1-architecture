@@ -1,6 +1,6 @@
 # phpno1-repository
 
-
+<a href="https://github.com/yb19890724/phpno1-repository/blob/master/README_CN.md">中文说明</a></p>
 Installation
 Composer
 Execute the following command to get the latest version of the package:
@@ -27,6 +27,7 @@ In your `config/app.php` add `Phpno1\Repository\providers\RepositoryServiceProvi
 ## Usage
 
 ```php
+<?php
 
 namespace App;
 
@@ -40,6 +41,7 @@ class Test extends Model
 
 #### create repository
 ```php
+<?php
 
 namespace App\Repositories\Eloquent;
 use App\Test;
@@ -75,10 +77,69 @@ class TestRepositoryEloquent extends AbstractRepository implements ITestReposito
 - function toEntity();
 - function toRepository(Builder $entity);
 
+### Phpno1\Repository\Eloquent;
+
+
+  ```php
+    $this->repository->all();
+  ```
+
+  ```php
+    $this->repository->find(int $id);
+  ```
+
+  ```php
+    $this->repository->first();
+  ```
+
+  ```php
+    $this->repository->count();
+  ```
+
+  ```php
+    $this->repository->findWhere(...$condition);
+  ```
+
+  ```php
+    $this->repository->findWhereFirst(...$condition);
+  ```
+
+  ```php
+    $this->repository->findWhereCount(...$condition);
+  ```
+
+  ```php
+    $this->repository->paginate(int $perPage = 10);
+  ```
+
+  ```php
+    $this->repository->create(array $properties);
+  ```
+
+  ```php
+    $this->repository->update(int $id, array $properties);
+  ```
+
+  ```php
+    $this->repository->delete(int $id);
+  ```
+
+  ```php
+    $this->repository->withCriteria(...$criteria);
+  ```
+
+  ```php
+    $this->repository->toEntity();
+  ```
+
+  ```php
+    $this->repository->toRepository(Builder $entity);
+  ```
 
 ## Use methods
 
 ```php
+<?php
 
 namespace App\Http\Controllers;
 
