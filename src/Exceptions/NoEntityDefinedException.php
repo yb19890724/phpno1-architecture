@@ -1,20 +1,12 @@
 <?php
 
-namespace Phpno1\Repository\Exceptions;
-
-use Exception;
+namespace Phpno1\Repositories\Exceptions;
 
 /**
  * 模型实例没有找到
  * NoEntityDefined class
  */
-class NoEntityDefinedException extends Exception
+class NoEntityDefinedException extends BaseRepositoryException
 {
-    const ErrorCode = 3001;
 
-    public function __construct(string $message = null)
-    {
-        $message = $message ?? trans('repository.' . static::ErrorCode);
-        parent::__construct($message, static::ErrorCode);
-    }
 }
