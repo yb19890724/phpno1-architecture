@@ -25,7 +25,6 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
-
+        // 绑定接口和实现类关系
     }
 }
