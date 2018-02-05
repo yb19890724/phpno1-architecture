@@ -1,6 +1,13 @@
-# phpno1-repository
+<h1 align="center">phpno1-repository</h1>
 
-<a href="https://github.com/yb19890724/phpno1-repository/blob/master/README.md">English description</a></p>
+
+<p align="center">
+
+[![Latest Stable Version](https://poser.pugx.org/phpno1/repository/v/stable)](https://packagist.org/packages/phpno1/repository)
+[![Total Downloads](https://poser.pugx.org/phpno1/repository/downloads)](https://packagist.org/packages/phpno1/repository)
+[![License](https://poser.pugx.org/phpno1/repository/license?format=flat)](https://packagist.org/packages/phpno1/repository)
+
+</p>
 
 composer 安装
 执行以下命令获取包的最新版本:
