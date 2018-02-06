@@ -11,16 +11,19 @@
         }
     ],
     "minimum-stability": "dev",
-    "autoload":{
-        "psr-4":{
-            "App\\": "app/",
-            "Phpno1\\Repository\\":"src"
-        }
-    },
     "require": {
         "php":">=7.1"
     },
     "require-dev":{
         "phpunit/phpunit": "~6.0"
+    },
+    "autoload":{
+        "psr-4":{
+            "App\\": "app/",
+            "Phpno1\\Repository\\":"src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {"Phpno1\\Repository\\Test\\": "tests/"}
     }
 }
