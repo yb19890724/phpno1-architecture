@@ -24,6 +24,8 @@
         }
     },
     "autoload-dev": {
-        "psr-4": {"Phpno1\\Repository\\Test\\": "tests/"}
+        "psr-4": {
+            "Phpno1\\Repository\\Test\\": "tests/"
+        }
     }
 }
