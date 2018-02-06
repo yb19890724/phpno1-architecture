@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpno1\Repository\providers;
+namespace Phpno1\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,9 +13,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //加载配置文件和语言包
-         $this->mergeConfigFrom(__DIR__.'/../Config/repository.php', 'repository');
-         $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'repository');
+        
     }
 
     /**
@@ -25,6 +23,6 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // 绑定接口和实现类关系
+        //end-binding
     }
 }

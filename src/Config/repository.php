@@ -1,34 +1,55 @@
 <?php
-
+/*
+|--------------------------------------------------------------------------
+| Repository Config
+|--------------------------------------------------------------------------
+|
+|
+*/
 return [
     /**
-     * 每页显示记录数
+     * 默认分页
      */
     'pagination' => [
-        'limit' => 30
+        'limit' => 20
     ],
     /**
-     * order by 排序设置
-     * type表示排序方式
-     * field表示排序的字段
+     * 数据缓存设置
+     */
+    'cache'      => [
+        'enabled'    => true,
+        'minutes'    => 10,
+    ],
+    /**
+     * 排序设置
      */
     'order' => [
         'type' => 'o',
         'field'=> 'orderable',
     ],
     /**
-     * 仓储层文件自动生成对应位置
+     * 文件自动生成器
      */
     'generator'  => [
-        'base_path'      => app_path(),
+        'auto_create'   => [
+            'controller' => true,
+            'request'    => true,
+            'service'    => true,
+            'model'      => true,
+            'response'   => true,
+            'seeder'     => true,
+        ],
+        'tpl_path'       => 'Generator/Templates',
         'root_namespace' => 'App\\',
-        'paths'         => [
-            'repositories' => 'Repositories\\Eloquent',
-            'interfaces'   => 'Repositories\\Contracts',
-            'criterias'    => 'Repositories\\Criterias',
-            'filters'      => 'Repositories\\Filters',
-            'provider'     => 'RepositoryServiceProvider',
-            'override_path' => app_path()
+        'paths' => [
+            'controller'          => 'Backend',
+            'repository_eloquent' => 'Repositories\\Eloquent',
+            'repository'          => 'Repositories\\Contracts',
+            'criteria'            => 'Repositories\\Criterias',
+            'provider'            => 'Providers\\RepositoryServiceProvider',
+            'service'             => 'Services',
+            'model'               => 'Models',
+            'response'            => 'Http\\Responses'
         ]
     ]
 ];
