@@ -1,6 +1,9 @@
 {
     "name": "phpno1/repository",
     "description": "an repository for laravel",
+    "keywords": ["laravel", "repository", "eloquent", "model"],
+    "homepage": "https://github.com/yb19890724/phpno1-repository",
+    "license": "MIT",
     "authors": [
         {
             "name": "yb19890724",
@@ -13,5 +16,11 @@
             "App\\": "app/",
             "Phpno1\\Repository\\":"src"
         }
+    },
+    "require": {
+        "php":">=7.1"
+    },
+    "require-dev":{
+        "phpunit/phpunit": "~6.0"
     }
 }
