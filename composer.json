@@ -13,11 +13,5 @@
             "App\\": "app/",
             "Phpno1\\Repository\\":"src"
         }
-    },
-    "require": {
-        "php":">=7.1"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~6.0"
     }
 }
