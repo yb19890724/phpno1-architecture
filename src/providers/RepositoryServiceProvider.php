@@ -29,6 +29,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->commands('Phpno1\Console\Commands\CreateEntity');
         //end-binding
     }
 }
