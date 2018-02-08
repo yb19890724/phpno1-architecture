@@ -15,7 +15,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/repository.php' => config_path('repository.php')
-        ]);
+        ],'repository');
 
         $this->mergeConfigFrom(__DIR__ . '/../config/repository.php', 'repository');
 
