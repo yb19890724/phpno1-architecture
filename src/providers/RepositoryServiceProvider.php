@@ -13,7 +13,13 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+        $this->publishes([
+            __DIR__ . '/../config/repository.php' => config_path('repository.php')
+        ]);
+
+        $this->mergeConfigFrom(__DIR__ . '/../config/repository.php', 'repository');
+
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'repository');
     }
 
     /**
