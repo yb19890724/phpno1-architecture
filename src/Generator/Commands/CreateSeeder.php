@@ -5,7 +5,7 @@ namespace Phpno1\Generator\Commands;
 use Illuminate\Console\Command;
 use Phpno1\Generator\GeneratorHelp;
 
-class CreateCriteria extends Command
+class CreateSeeder extends Command
 {
     use GeneratorHelp;
     /**
@@ -13,23 +13,18 @@ class CreateCriteria extends Command
      *
      * @var string
      */
-    protected $signature = 'create:criteria {name}';
+    protected $signature = 'create:seeder {name}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command Create Criteria';
+    protected $description = 'Command Create Seeder';
 
-    /**
-     * 创建的实体名称
-     *
-     * @var string
-     */
     protected $name;
 
-    protected const COMMAND_KEY = 'criteria';
+    protected const COMMAND_KEY = 'seeder';
 
     /**
      * Create a new command instance.
@@ -50,16 +45,7 @@ class CreateCriteria extends Command
     public function handle()
     {
         $this->name = ucfirst($this->argument('name'));
-        $tplContent = $this->getFullTplContent(static::COMMAND_KEY, $this->name, null);
-        $this->writeFileByType(static::COMMAND_KEY, $this->name, $tplContent);
-    }
-
-    protected function getTplVars()
-    {
-        return [
-            'class_name' => $this->name,
-            'namespace'  => $this->getFullNamespaceByType(static::COMMAND_KEY),
-            'interface'  => 'ICriteria',
-        ];
+        $this->callCommand(static::COMMAND_KEY, $this->name, 'make:seeder');
+        $this->callCommand('factory', $this->name, 'make:factory');
     }
 }

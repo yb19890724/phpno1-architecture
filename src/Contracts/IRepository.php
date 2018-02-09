@@ -21,7 +21,7 @@ interface IRepository
     public function paginate(int $perPage = 10);
     public function create(array $properties);
     public function update(int $id, array $properties);
-    public function delete(int $id);
+    public function deleteById(int $id);
     public function withCriteria(...$criteria);
     public function toEntity();
     public function toRepository(Builder $entity);
