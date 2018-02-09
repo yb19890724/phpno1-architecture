@@ -1,10 +1,9 @@
 <?php
 
-namespace Phpno1\Repositories\Eloquent;
+namespace Phpno1\Repository\Eloquent;
 
-
-use Phpno1\Repositories\Criterias\ICriteria;
-use Phpno1\Repositories\Contracts\IRepository;
+use Phpno1\Repository\Criterias\ICriteria;
+use Phpno1\Repository\Contracts\IRepository;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 use Illuminate\Database\Eloquent\{
@@ -13,7 +12,7 @@ use Illuminate\Database\Eloquent\{
     ModelNotFoundException
 };
 
-use Phpno1\Repositories\Exceptions\{
+use Phpno1\Repository\Exceptions\{
     RepositoryCastFailException,
     NoEntityDefinedException,
     IllegalCriteriaInstanceException,

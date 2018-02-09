@@ -1,9 +1,9 @@
 <?php
 
-namespace Phpno1\Repositories\Traits;
+namespace Phpno1\Repository\Traits;
 
-use Phpno1\Repositories\Exceptions\IllegalFilterInstanceException;
-use Phpno1\Repositories\Filters\{
+use Phpno1\Repository\Exceptions\IllegalFilterInstanceException;
+use Phpno1\Repository\Filters\{
     IFilter,
     IOrder
 };

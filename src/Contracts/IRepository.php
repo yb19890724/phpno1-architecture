@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpno1\Repositories\Contracts;
+namespace Phpno1\Repository\Contracts;
 
 use Illuminate\Database\Eloquent\Builder;
 

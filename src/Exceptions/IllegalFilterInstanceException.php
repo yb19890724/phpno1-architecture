@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpno1\Repositories\Exceptions;
+namespace Phpno1\Repository\Exceptions;
 
 /**
  * Filter实例不合法异常

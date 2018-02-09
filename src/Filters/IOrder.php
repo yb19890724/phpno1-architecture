@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpno1\Repositories\Filters;
+namespace Phpno1\Repository\Filters;
 
 /**
  * 排序操作接口

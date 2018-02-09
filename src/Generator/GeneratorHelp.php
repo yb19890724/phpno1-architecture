@@ -6,7 +6,7 @@
  * Time: 下午9:40
  */
 
-namespace Phpno1\Generator;
+namespace Phpno1\Repository\Generator;
 
 
 use Illuminate\Support\Facades\File;

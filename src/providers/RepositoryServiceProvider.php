@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpno1\Providers;
+namespace Phpno1\Repository\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

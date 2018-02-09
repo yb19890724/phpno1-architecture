@@ -6,7 +6,7 @@
  * Time: 下午5:23
  */
 
-namespace Phpno1\Repositories\Exceptions;
+namespace Phpno1\Repository\Exceptions;
 
 /**
  * 仓储配置文件异常

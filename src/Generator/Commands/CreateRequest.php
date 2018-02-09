@@ -1,9 +1,9 @@
 <?php
 
-namespace Phpno1\Generator\Commands;
+namespace Phpno1\Repository\Generator\Commands;
 
 use Illuminate\Console\Command;
-use Phpno1\Generator\GeneratorHelp;
+use Phpno1\Repository\Generator\GeneratorHelp;
 
 class CreateRequest extends Command
 {
