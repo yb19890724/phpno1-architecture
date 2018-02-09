@@ -2,6 +2,7 @@
 
 namespace Phpno1\Repository\Generator\Commands;
 
+use Illuminate\Console\Command;
 use Phpno1\Repository\Generator\GeneratorHelp;
 
 class CreateResponse extends Command
