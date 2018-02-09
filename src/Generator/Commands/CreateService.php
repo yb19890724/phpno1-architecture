@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpno1\Generator\Commands;
+namespace Phpno1\Repository\Generator\Commands;
 
 use Illuminate\Console\Command;
 use Phpno1\Repository\Generator\GeneratorHelp;
