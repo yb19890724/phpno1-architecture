@@ -4,28 +4,26 @@ namespace {namespace};
 
 use Illuminate\Contracts\Support\Responsable;
 
-class {upper_name}{response_type}Response implements Responsable
+class {class_name}Response implements Responsable
 {
-    protected ${name};
+    protected $result;
 
-    public function __construct(${name})
+    public function __construct($result)
     {
-        $this->{name} = ${name};
+        $this->result = $result;
     }
 
     public function toResponse($request)
     {
-        ${name} = $this->transform{upper_name}();
+        $data = $this->transform();
 
-        return ${name};
+        return $data;
     }
 
-    protected function transform{upper_name}()
+    protected function transform()
     {
-        return $this->{name}->map(function ($model) {
-            return [
+        return [
 
-            ];
-        });
+        ];
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Phpno1\Generator\Commands;
 
-use Illuminate\Console\Command;
+
 use Phpno1\Generator\GeneratorHelp;
 
-class CreateCriteria extends Command
+class CreateResponse extends Command
 {
     use GeneratorHelp;
     /**
@@ -13,23 +13,20 @@ class CreateCriteria extends Command
      *
      * @var string
      */
-    protected $signature = 'create:criteria {name}';
+    protected $signature = 'create:response {name} {--dir=}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command Create Criteria';
+    protected $description = 'Command Create Response';
 
-    /**
-     * 创建的实体名称
-     *
-     * @var string
-     */
     protected $name;
 
-    protected const COMMAND_KEY = 'criteria';
+    protected $option;
+
+    protected const COMMAND_KEY = 'response';
 
     /**
      * Create a new command instance.
@@ -50,16 +47,16 @@ class CreateCriteria extends Command
     public function handle()
     {
         $this->name = ucfirst($this->argument('name'));
+        $this->option = $this->option('dir') ?? '';
         $tplContent = $this->getFullTplContent(static::COMMAND_KEY, $this->name, null);
-        $this->writeFileByType(static::COMMAND_KEY, $this->name, $tplContent);
+        $this->writeFileByType(static::COMMAND_KEY, $this->name, $tplContent, $this->option);
     }
 
     protected function getTplVars()
     {
         return [
-            'class_name' => $this->name,
-            'namespace'  => $this->getFullNamespaceByType(static::COMMAND_KEY),
-            'interface'  => 'ICriteria',
+            'class_name'           => $this->name,
+            'namespace'            => $this->getFullNamespaceByType(static::COMMAND_KEY),
         ];
     }
 }

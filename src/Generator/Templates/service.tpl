@@ -2,16 +2,16 @@
 
 namespace {namespace};
 
-use {repository_namespace};
+use {repository_injection};
 
-class {upper_name}Service extends AbstractService
+class {class_name}Service extends AbstractService
 {
-    protected ${name}Repository;
+    protected ${var_name}Repository;
 
-    public function __construct({upper_name}Repository ${name}Repository)
+    public function __construct({class_name}Repository ${var_name}Repository)
     {
-        $this->{name}Repository = ${name}Repository;
+        $this->{var_name}Repository = ${var_name}Repository;
     }
 
-{resource_method}
+{method}
 }

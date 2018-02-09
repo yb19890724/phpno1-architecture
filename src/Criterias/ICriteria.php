@@ -3,9 +3,8 @@
 namespace Phpno1\Repositories\Criterias;
 
 /**
- * 公共操作接口
- * 
- * ICriteria interface
+ * Interface ICriteria
+ * @package Phpno1\Repositories\Criterias
  */
 interface ICriteria
 {

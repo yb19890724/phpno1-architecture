@@ -5,7 +5,7 @@ namespace Phpno1\Generator\Commands;
 use Illuminate\Console\Command;
 use Phpno1\Generator\GeneratorHelp;
 
-class CreateCriteria extends Command
+class CreateService extends Command
 {
     use GeneratorHelp;
     /**
@@ -13,23 +13,20 @@ class CreateCriteria extends Command
      *
      * @var string
      */
-    protected $signature = 'create:criteria {name}';
+    protected $signature = 'create:service {name} {--resource}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command Create Criteria';
+    protected $description = 'Command Create Service';
 
-    /**
-     * 创建的实体名称
-     *
-     * @var string
-     */
     protected $name;
 
-    protected const COMMAND_KEY = 'criteria';
+    protected $option;
+
+    protected const COMMAND_KEY = 'service';
 
     /**
      * Create a new command instance.
@@ -50,16 +47,18 @@ class CreateCriteria extends Command
     public function handle()
     {
         $this->name = ucfirst($this->argument('name'));
-        $tplContent = $this->getFullTplContent(static::COMMAND_KEY, $this->name, null);
+        $this->option = $this->option('resource');
+        $tplContent = $this->getFullTplContent(static::COMMAND_KEY, $this->name, $this->option, 'method');
         $this->writeFileByType(static::COMMAND_KEY, $this->name, $tplContent);
     }
 
     protected function getTplVars()
     {
         return [
-            'class_name' => $this->name,
-            'namespace'  => $this->getFullNamespaceByType(static::COMMAND_KEY),
-            'interface'  => 'ICriteria',
+            'var_name'             => lcfirst($this->name),
+            'class_name'           => $this->name,
+            'namespace'            => $this->getFullNamespaceByType(static::COMMAND_KEY),
+            'repository_injection' => $this->getFullNamespaceByType('repository') . '\\' . $this->name . 'Repository',
         ];
     }
 }

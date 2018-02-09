@@ -8,7 +8,9 @@ use Phpno1\Repositories\Contracts\IRepository;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 use Illuminate\Database\Eloquent\{
-    Builder, Model, ModelNotFoundException
+    Builder,
+    Model,
+    ModelNotFoundException
 };
 
 use Phpno1\Repositories\Exceptions\{
@@ -183,7 +185,7 @@ abstract class AbstractRepository implements IRepository
      * @param integer $id
      * @return boolean
      */
-    public function delete(int $id)
+    public function deleteById(int $id)
     {
         return $this->find($id)->delete();
     }

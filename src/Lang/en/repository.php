@@ -6,4 +6,5 @@ return [
     'not_enough_where_params'   => 'Not Enough Where Params Exception',
     'repository_cast_fail'      => 'Repository Cast Fail Exception',
     'illegal_filter_instance'   => 'Illegal Filter Instance Exception',
+    'repository_config_fail'    => 'Incomplete repository configuration information Exception',
 ];

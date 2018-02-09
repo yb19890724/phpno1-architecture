@@ -2,8 +2,7 @@
 
 namespace {namespace};
 
-
-interface {upper_name}Repository
+interface {class_name}Repository
 {
-{resource_method_interface}
+
 }

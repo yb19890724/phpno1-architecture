@@ -6,4 +6,5 @@ return [
     'not_enough_where_params'   => 'where条件没有足够的参数',
     'repository_cast_fail'      => '仓储类型转换失败',
     'illegal_filter_instance'   => '不合法的Filter实例',
+    'repository_config_fail'    => '仓储配置文件信息异常',
 ];

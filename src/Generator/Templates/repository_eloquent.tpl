@@ -1,11 +1,11 @@
 <?php
 
-namespace {namespace};
+namespace {namespace_eloquent};
 
-use {model_namespace}\{upper_name};
-use {interface_namespace}\{upper_name}Repository;
+use {namespace_model}\{class_name};
+use {namespace}\{class_name}Repository;
 
-class {upper_name}RepositoryEloquent extends AbstractRepository implements {upper_name}Repository
+class {class_name}RepositoryEloquent extends AbstractRepository implements {class_name}Repository
 {
     protected $filters = [
         // filter and sort settings
@@ -13,8 +13,6 @@ class {upper_name}RepositoryEloquent extends AbstractRepository implements {uppe
 
     public function entity()
     {
-        return {upper_name}::class;
+        return {class_name}::class;
     }
-
-{resource_method}
 }

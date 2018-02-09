@@ -31,17 +31,8 @@ return [
      * 文件自动生成器
      */
     'generator'  => [
-        'auto_create'   => [
-            'controller' => true,
-            'request'    => true,
-            'service'    => true,
-            'model'      => true,
-            'response'   => true,
-            'seeder'     => true,
-        ],
-        'tpl_path'       => 'Generator/Templates',
         'root_namespace' => 'App\\',
-        'paths' => [
+        'namespace' => [
             'controller'          => 'Backend',
             'repository_eloquent' => 'Repositories\\Eloquent',
             'repository'          => 'Repositories\\Contracts',
@@ -49,7 +40,8 @@ return [
             'provider'            => 'Providers\\RepositoryServiceProvider',
             'service'             => 'Services',
             'model'               => 'Models',
-            'response'            => 'Http\\Responses'
+            'response'            => 'Http\\Responses',
+            'filter'              => 'Repositories\\Filters'
         ]
     ]
 ];

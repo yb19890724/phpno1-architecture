@@ -5,7 +5,7 @@ namespace Phpno1\Generator\Commands;
 use Illuminate\Console\Command;
 use Phpno1\Generator\GeneratorHelp;
 
-class CreateCriteria extends Command
+class CreateController extends Command
 {
     use GeneratorHelp;
     /**
@@ -13,23 +13,20 @@ class CreateCriteria extends Command
      *
      * @var string
      */
-    protected $signature = 'create:criteria {name}';
+    protected $signature = 'create:controller {name} {--resource}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command Create Criteria';
+    protected $description = 'Command Create Controller';
 
-    /**
-     * 创建的实体名称
-     *
-     * @var string
-     */
     protected $name;
 
-    protected const COMMAND_KEY = 'criteria';
+    protected $option;
+
+    protected const COMMAND_KEY = 'controller';
 
     /**
      * Create a new command instance.
@@ -50,16 +47,8 @@ class CreateCriteria extends Command
     public function handle()
     {
         $this->name = ucfirst($this->argument('name'));
-        $tplContent = $this->getFullTplContent(static::COMMAND_KEY, $this->name, null);
-        $this->writeFileByType(static::COMMAND_KEY, $this->name, $tplContent);
-    }
-
-    protected function getTplVars()
-    {
-        return [
-            'class_name' => $this->name,
-            'namespace'  => $this->getFullNamespaceByType(static::COMMAND_KEY),
-            'interface'  => 'ICriteria',
-        ];
+        $this->option = $this->option('resource');
+        $options = $this->option ? ['--resource' => true] : [];
+        $this->callCommand(static::COMMAND_KEY, $this->name, 'make:controller', $options);
     }
 }
