@@ -30,7 +30,16 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands('Phpno1\Console\Commands\CreateEntity');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateEntity');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateController');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateCriteria');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateFilter');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateModel');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateRepository');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateRequest');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateResponse');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateSeeder');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateService');
         //end-binding
     }
 }
