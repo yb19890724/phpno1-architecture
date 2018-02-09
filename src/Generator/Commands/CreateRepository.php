@@ -26,8 +26,6 @@ class CreateRepository extends Command
 
     protected const COMMAND_KEY = 'repository';
 
-    protected const BINDING_FLG = '//end-binding';
-
     /**
      * Create a new command instance.
      *
@@ -51,7 +49,8 @@ class CreateRepository extends Command
         $this->writeFileByType(static::COMMAND_KEY, $this->name, $tplContent);
         $tplContent = $this->getFullTplContent('repository_eloquent', $this->name, null);
         $this->writeFileByType('repository_eloquent', $this->name, $tplContent);
-        $this->binding(static::BINDING_FLG);
+        $this->call('create:provider');
+        $this->call('create:binding', ['name' => $this->name]);
     }
 
     protected function getTplVars()
@@ -61,8 +60,6 @@ class CreateRepository extends Command
             'namespace'            => $this->getFullNamespaceByType(static::COMMAND_KEY),
             'namespace_eloquent'   => $this->getFullNamespaceByType('repository_eloquent'),
             'namespace_model'      => $this->getFullNamespaceByType('model'),
-            'interface'            => $this->getFullNamespaceByType(static::COMMAND_KEY) . '\\' . $this->name . 'Repository',
-            'repository'           => $this->getFullNamespaceByType('repository_eloquent') . '\\' . $this->name . 'RepositoryEloquent',
         ];
     }
 }

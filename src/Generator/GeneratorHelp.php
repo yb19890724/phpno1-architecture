@@ -29,6 +29,7 @@ trait GeneratorHelp
         'repository_eloquent'  => 'repository_eloquent.tpl',
         'response'             => 'response.tpl',
         'service'              => 'service.tpl',
+        'provider'             => 'provider.tpl',
     ];
 
     protected function generatorInit()
@@ -77,8 +78,20 @@ trait GeneratorHelp
 
         $name = ucfirst(camel_case($name));
         $name = !empty($prefix) ? $prefix . '/' . $name : $name;
+        $name = !empty($path) ? $path . '\\' . $name : $name;
 
-        return !empty($path) ? $path . '\\' . $name : $name;
+        return $this->setExcept($type, $name);
+    }
+
+    protected function setExcept($type, $name)
+    {
+        if (in_array($type, $this->except)) {
+            $arr = explode('\\', $name);
+
+            return implode('\\', array_unique($arr));
+        }
+
+        return $name;
     }
 
     protected function getTplContent($type)
