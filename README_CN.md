@@ -48,7 +48,7 @@
     php artisan repository:controller {name} {--resource}
 ```
 
-####
+####  生成扩展全局限制类
 ```php
     php artisan repository:criteria {name}
 ```
