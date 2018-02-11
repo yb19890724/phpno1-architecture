@@ -98,8 +98,7 @@ trait GeneratorHelp
     {
         $basePath = $this->generatorTplPathInfo['base'];
         $path = $this->generatorTplPathInfo[$type];
-        $path = base_path($basePath . $path);
-
+        $path = $basePath . $path;
         return File::get($path);
     }
 

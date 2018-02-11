@@ -40,6 +40,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->commands('Phpno1\Repository\Generator\Commands\CreateResponse');
         $this->commands('Phpno1\Repository\Generator\Commands\CreateSeeder');
         $this->commands('Phpno1\Repository\Generator\Commands\CreateService');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateProvider');
+        $this->commands('Phpno1\Repository\Generator\Commands\CreateBinding');
         //end-binding
     }
 }
