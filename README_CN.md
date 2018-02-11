@@ -10,11 +10,6 @@
 
 </p>
 
-composer 安装
-执行以下命令获取包的最新版本:
-
-composer require phpno1/repository
-
 ### Directory Structure
 
 + Contracts  : 仓储业务抽象接口。
@@ -28,42 +23,20 @@ composer require phpno1/repository
 
 #### >= laravel5.5
 
-ServiceProvider will be attached automatically
+自动发现服务提供者并且注册
 
-#### Other
-
-先在RepositoryServiceProvider.php中的register方法中，绑定仓储接口和实现类映射关系：
-
-```php
-public function register()
-{
-    $this->app->bind(\App\Repositories\Contracts\UserRepository::class, \App\Repositories\Eloquent\UserRepositoryEloquent::class);
-}
-```
-
-- 使用扩展包发现功能
-在你composer.json文件中定义
-
-"extra": {
-    "laravel": {
-        "providers": [
-            "Phpno1\\Repository\\providers\\RepositoryServiceProvider"
-        ]
-    }
-}
-
-
-- 手动绑定方式
-In your `config/app.php` add `Phpno1\Repository\providers\RepositoryServiceProvider::class` to the end of the `providers` array:
+#### composer 安装
+执行以下命令获取包的最新版本:
 
 ```php
-'providers' => [
-    ...
-    Phpno1\Repository\providers\RepositoryServiceProvider::class,
-],
+    composer require phpno1/repository
 ```
 
-## Usage
+#### 发布配置文件
+
+php artisan vendor:publish --tag=repository
+
+## 用法
 
 ```php
 
@@ -77,7 +50,7 @@ class User extends Model
 }
 ```
 
-#### create repository
+#### 创建仓库
 ```php
 
 namespace App\Repositories\Eloquent;
