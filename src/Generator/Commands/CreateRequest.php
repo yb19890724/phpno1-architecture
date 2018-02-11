@@ -13,7 +13,7 @@ class CreateRequest extends Command
      *
      * @var string
      */
-    protected $signature = 'repository:request {name} {--dir=}';
+    protected $signature = 'phpno1:request {name} {--dir=}';
 
     /**
      * The console command description.

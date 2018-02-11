@@ -14,7 +14,7 @@ class CreateProvider extends Command
      *
      * @var string
      */
-    protected $signature = 'repository:provider';
+    protected $signature = 'phpno1:provider';
 
     /**
      * The console command description.
