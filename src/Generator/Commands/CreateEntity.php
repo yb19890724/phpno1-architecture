@@ -17,7 +17,7 @@ class CreateEntity extends Command
      *
      * @var string
      */
-    protected $signature = 'create:entity {name} {--resource}';
+    protected $signature = 'repository:entity {name} {--resource}';
 
     /**
      * The console command description.

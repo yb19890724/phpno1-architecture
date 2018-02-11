@@ -41,6 +41,19 @@ public function register()
 }
 ```
 
+- 使用扩展包发现功能
+在你composer.json文件中定义
+
+"extra": {
+    "laravel": {
+        "providers": [
+            "Phpno1\\Repository\\providers\\RepositoryServiceProvider"
+        ]
+    }
+}
+
+
+- 手动绑定方式
 In your `config/app.php` add `Phpno1\Repository\providers\RepositoryServiceProvider::class` to the end of the `providers` array:
 
 ```php

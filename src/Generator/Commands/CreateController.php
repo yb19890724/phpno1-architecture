@@ -13,7 +13,7 @@ class CreateController extends Command
      *
      * @var string
      */
-    protected $signature = 'create:controller {name} {--resource}';
+    protected $signature = 'repository:controller {name} {--resource}';
 
     /**
      * The console command description.

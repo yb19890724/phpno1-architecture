@@ -27,5 +27,12 @@
         "psr-4": {
             "Phpno1\\Repository\\Test\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Phpno1\\Repository\\providers\\RepositoryServiceProvider"
+            ]
+        }
     }
 }

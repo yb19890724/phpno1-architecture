@@ -16,6 +16,8 @@ trait GeneratorHelp
 {
     protected $generatorConfig;
 
+    protected $except = ['provider'];
+
     protected $addSuffix = ['controller', 'request', 'response', 'seeder', 'factory', 'service', 'repository', 'repository_eloquent'];
 
     protected $generatorTplPathInfo = [
