@@ -2,7 +2,7 @@
 
 namespace {namespace}
 
-use Phpno1\Repositories\Filters\{
+use Phpno1\Repository\Filters\{
     AbstractFilter,
     IOrder
 };

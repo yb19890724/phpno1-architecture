@@ -4,7 +4,7 @@ namespace {namespace};
 
 use {repository_injection};
 
-class {class_name}Service extends AbstractService
+class {class_name}Service
 {
     protected ${var_name}Repository;
 
