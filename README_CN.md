@@ -10,7 +10,7 @@
 
 </p>
 
-### Directory Structure
+## 目录结构
 
 + Contracts  : 仓储业务抽象接口。
 + Criterias  : 全局通用业务抽取以及准对某一类业务的Scope。
@@ -19,11 +19,9 @@
 + Filters    : 根据参数自动过滤和排序。
 + Traits     : Trait封装
 
-### Laravel
+## 使用要求
 
-#### >= laravel5.5
-
-自动发现服务提供者并且注册
+#### laravel版本 >= 5.5  自动发现服务提供者并且注册
 
 #### composer 安装
 执行以下命令获取包的最新版本:
@@ -34,7 +32,66 @@
 
 #### 发布配置文件
 
-php artisan vendor:publish --tag=repository
+```php
+    php artisan vendor:publish --tag=repository
+```
+
+## 命令
+
+####  生成组合配置
+```php
+    php artisan repository:entity {name} {--resource}
+```
+
+####  生成控制器
+```php
+    php artisan repository:controller {name} {--resource}
+```
+
+####
+```php
+    php artisan repository:criteria {name}
+```
+
+#### 生成过滤类
+```php
+    php artisan repository:filter {name} {--prefix=} {--sort}
+```
+
+#### 生成模型类
+```php
+    php artisan repository:model {name}
+```
+
+#### 生成服务器提供者,用于接口绑定实体类
+```php
+    php artisan repository:provider
+```
+
+#### 生成仓库类
+```php
+    php artisan repository:repository {name}
+```
+
+#### 生成校验类
+```php
+    php artisan repository:request {name} {--dir=}
+```
+
+#### 生成响应类
+```php
+    php artisan repository:response {name} {--dir=}
+```
+
+#### 生成种子文件
+```php
+    php artisan repository:seeder {name}
+```
+
+#### 生成服务类
+```php
+    php artisan repository:service {name} {--resource}
+```
 
 ## 用法
 
@@ -69,7 +126,7 @@ class UserRepositoryEloquent extends AbstractRepository implements UserRepositor
 }
 ```
 
-#### use repository
+## 使用仓库
 
 + 注入到controller中，或者serveric层中使用。
 ```php
@@ -89,7 +146,7 @@ class UserController extends Controller
 
 ```
 
-## Methods
+## 方法介绍
 
 ### Phpno1\Repository\Contracts\IRepository;
 
