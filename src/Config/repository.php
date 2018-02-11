@@ -34,14 +34,14 @@ return [
         'root_namespace' => 'App\\',
         'namespace' => [
             'controller'          => 'Backend',
-            'repository_eloquent' => 'Repositories\\Eloquent',
-            'repository'          => 'Repositories\\Contracts',
-            'criteria'            => 'Repositories\\Criterias',
+            'repository_eloquent' => 'Repository\\Eloquent',
+            'repository'          => 'Repository\\Contracts',
+            'criteria'            => 'Repository\\Criterias',
             'provider'            => 'Providers\\RepositoryServiceProvider',
             'service'             => 'Services',
             'model'               => 'Models',
             'response'            => 'Http\\Responses',
-            'filter'              => 'Repositories\\Filters'
+            'filter'              => 'Repository\\Filters'
         ]
     ]
 ];

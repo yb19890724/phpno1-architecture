@@ -4,7 +4,7 @@ namespace Phpno1\Repository\Criterias;
 
 /**
  * Class ByCreateTime
- * @package App\Repositories\Criterias
+ * @package App\Repository\Criterias
  */
 class ByCreateTime implements ICriteria
 {

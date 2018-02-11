@@ -12,7 +12,7 @@ namespace Phpno1\Repository\Exceptions;
  * 仓储配置文件异常
  *
  * Class RepositoryConfigFailException
- * @package App\Repositories\Exceptions
+ * @package App\Repository\Exceptions
  */
 class RepositoryConfigFailException extends BaseRepositoryException
 {
