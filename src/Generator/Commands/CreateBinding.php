@@ -13,7 +13,7 @@ class CreateBinding extends Command
      *
      * @var string
      */
-    protected $signature = 'repository:binding {name}';
+    protected $signature = 'phpno1:binding {name}';
 
     /**
      * The console command description.

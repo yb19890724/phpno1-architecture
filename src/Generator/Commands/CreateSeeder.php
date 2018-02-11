@@ -13,7 +13,7 @@ class CreateSeeder extends Command
      *
      * @var string
      */
-    protected $signature = 'repository:seeder {name}';
+    protected $signature = 'phpno1:seeder {name}';
 
     /**
      * The console command description.

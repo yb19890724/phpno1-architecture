@@ -40,57 +40,57 @@
 
 ####  生成组合配置
 ```php
-    php artisan repository:entity {name} {--resource}
+    php artisan phpno1:entity {name} {--resource}
 ```
 
 ####  生成控制器
 ```php
-    php artisan repository:controller {name} {--resource}
+    php artisan phpno1:controller {name} {--resource}
 ```
 
 ####  生成扩展全局限制类
 ```php
-    php artisan repository:criteria {name}
+    php artisan phpno1:criteria {name}
 ```
 
 #### 生成过滤类
 ```php
-    php artisan repository:filter {name} {--prefix=} {--sort}
+    php artisan phpno1:filter {name} {--prefix=} {--sort}
 ```
 
 #### 生成模型类
 ```php
-    php artisan repository:model {name}
+    php artisan phpno1:model {name}
 ```
 
 #### 生成服务器提供者,用于接口绑定实体类
 ```php
-    php artisan repository:provider
+    php artisan phpno1:provider
 ```
 
 #### 生成仓库类
 ```php
-    php artisan repository:repository {name}
+    php artisan phpno1:repository {name}
 ```
 
 #### 生成校验类
 ```php
-    php artisan repository:request {name} {--dir=}
+    php artisan phpno1:request {name} {--dir=}
 ```
 
 #### 生成响应类
 ```php
-    php artisan repository:response {name} {--dir=}
+    php artisan phpno1:response {name} {--dir=}
 ```
 
 #### 生成种子文件
 ```php
-    php artisan repository:seeder {name}
+    php artisan phpno1:seeder {name}
 ```
 
 #### 生成服务类
 ```php
-    php artisan repository:service {name} {--resource}
+    php artisan phpno1:service {name} {--resource}
 ```
 
 ## 用法

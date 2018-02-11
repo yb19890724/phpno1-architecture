@@ -13,7 +13,7 @@ class CreateRepository extends Command
      *
      * @var string
      */
-    protected $signature = 'repository:repository {name}';
+    protected $signature = 'phpno1:repository {name}';
 
     /**
      * The console command description.
@@ -49,8 +49,8 @@ class CreateRepository extends Command
         $this->writeFileByType(static::COMMAND_KEY, $this->name, $tplContent);
         $tplContent = $this->getFullTplContent('repository_eloquent', $this->name, null);
         $this->writeFileByType('repository_eloquent', $this->name, $tplContent);
-        $this->call('create:provider');
-        $this->call('create:binding', ['name' => $this->name]);
+        $this->call('phpno1:provider');
+        $this->call('phpno1:binding', ['name' => $this->name]);
     }
 
     protected function getTplVars()

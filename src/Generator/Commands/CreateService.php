@@ -13,7 +13,7 @@ class CreateService extends Command
      *
      * @var string
      */
-    protected $signature = 'repository:service {name} {--resource}';
+    protected $signature = 'phpno1:service {name} {--resource}';
 
     /**
      * The console command description.

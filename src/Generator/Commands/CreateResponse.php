@@ -13,7 +13,7 @@ class CreateResponse extends Command
      *
      * @var string
      */
-    protected $signature = 'repository:response {name} {--dir=}';
+    protected $signature = 'phpno1:response {name} {--dir=}';
 
     /**
      * The console command description.
