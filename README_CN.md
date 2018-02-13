@@ -21,7 +21,7 @@
 
 ## 使用要求
 
-#### laravel版本 >= 5.5  自动发现服务提供者并且注册
+#### laravel版本 >= 5.5
 
 #### composer 安装
 执行以下命令获取包的最新版本:
@@ -36,7 +36,21 @@
     php artisan vendor:publish --tag=repository
 ```
 
+#### 注册到服务容器
+
+说明：用命令生成仓储文件时(phpno1:entity和phpno1:repository)，会自动生成RepositoryServiceProvider文件。
+
+```php
+    # 在config/app.php中
+    'providers' => [
+        // ......
+        App\Providers\RouteServiceProvider::class,
+    ];
+```
+
 ## 命令
+
+说明：使用命令创建仓储文件时(phpno1:entity和phpno1:repository)，会自动绑定接口与实现类关系。
 
 ####  生成组合配置
 ```php
@@ -377,8 +391,27 @@ class NameFilter extends AbstractFilter implements IOrder
  // 过滤和排序组合。参数"o"表示排序方式。参数"orderable"表示要排序的字段
  http://www.phpno1.com/user/list?name=Anthony&email=king19800105@163.com&o=desc&orderable=name
 ```
+
+#### 使用CacheGenerate的trait特性
+
+用途：当使用redis或memcahce做缓存时，方便做数据缓存操作。当然，您也可以使用Laravel框架提供的Cache。
+
+```php
+    public function getUserList()
+    {
+        // 参数1：缓存的key值
+        // 缓存中有数据则从缓存中取，没有数据则从数据库取一次放入缓存。
+        $this->getOrCache('getUserList', function () {
+            return $this->paginate();
+        });
+    }
+```
+
+
+
 #### 注意事项
 
++ 建议文件生成都使用命令来操作。
 + 过滤必须要继承AbstractFilter (有特殊需求的可以实现IFilter接口) ，过滤必须实现IOrder接口。
 + 过滤和排序都是可选的。
 + 通过重写过滤中的mappings()方法来改变数据库字段和过滤使用的参数映射关系。
