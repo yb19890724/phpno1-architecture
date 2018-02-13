@@ -4,7 +4,7 @@ namespace {namespace};
 
 use Illuminate\Contracts\Support\Responsable;
 
-class {class_name}Response implements Responsable
+class {class_name} implements Responsable
 {
     protected $result;
 
