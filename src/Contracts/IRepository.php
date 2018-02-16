@@ -12,7 +12,7 @@ interface IRepository
 {
     public function entity();
     public function all();
-    public function find(int $id);
+    public function find($id);
     public function first();
     public function count();
     public function findWhere(...$condition);

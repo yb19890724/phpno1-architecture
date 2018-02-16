@@ -93,10 +93,10 @@ abstract class AbstractRepository implements IRepository
     /**
      * 根据id获取一条数据
      *
-     * @param integer $id
+     * @param integer|array $id
      * @return Builder
      */
-    public function find(int $id)
+    public function find($id)
     {
         $model = $this->entity->find($id);
 
