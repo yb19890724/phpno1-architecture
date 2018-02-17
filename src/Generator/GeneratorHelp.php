@@ -21,7 +21,7 @@ trait GeneratorHelp
     protected $addSuffix = ['controller', 'request', 'response', 'seeder', 'factory', 'service', 'repository', 'repository_eloquent'];
 
     protected $generatorTplPathInfo = [
-        'base'                 =>  __DIR__."\\Templates\\",
+        'base'                 =>  __DIR__."/Templates/",
         'method'               => 'service_method.tpl',
         'sort_method'          => 'sort_method.tpl',
         'binding'              => 'binding.tpl',
