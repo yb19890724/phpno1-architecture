@@ -2,6 +2,7 @@
 
 namespace Phpno1\Repository\Eloquent;
 
+use Illuminate\Support\Facades\DB;
 use Phpno1\Repository\Criterias\ICriteria;
 use Phpno1\Repository\Contracts\IRepository;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
@@ -237,6 +238,38 @@ abstract class AbstractRepository implements IRepository
         $this->entity = $entity;
 
         return $this;
+    }
+
+    /**
+     * 执行事务
+     * 传入匿名函数就是自动，不传入就是手动
+     *
+     * @param callable|null $callback
+     */
+    public function transaction(callable $callback = null)
+    {
+        if (is_null($callback)) {
+            DB::beginTransaction();
+            return;
+        }
+
+        DB::transaction(call_user_func($callback));
+    }
+
+    /**
+     * 事务回滚
+     */
+    public function rollBack()
+    {
+        DB::rollBack();
+    }
+
+    /**
+     * 事务提交
+     */
+    public function commit()
+    {
+        DB::commit();
     }
 
     /**

@@ -25,4 +25,7 @@ interface IRepository
     public function withCriteria(...$criteria);
     public function toEntity();
     public function toRepository(Builder $entity);
+    public function transaction(callable $callback = null);
+    public function rollBack();
+    public function commit();
 }
