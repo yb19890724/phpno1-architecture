@@ -75,9 +75,9 @@ class CreateEntity extends Command
 
         if ($this->confirm('Do you want to create Response ? [y|n]')) {
             $name = $this->name . 'IndexResponse';
-            $this->call('phpno1:response', ['name' => $name], ['--dir' => $this->name]);
+            $this->call('phpno1:response', ['name' => $name, '--dir' => $this->name]);
             $name = $this->name . 'ShowResponse';
-            $this->call('phpno1:response', ['name' => $name], ['--dir' => $this->name]);
+            $this->call('phpno1:response', ['name' => $name, '--dir' => $this->name]);
         } else {
             $this->warn('skip');
         }
