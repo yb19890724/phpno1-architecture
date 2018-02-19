@@ -134,11 +134,12 @@ abstract class AbstractRepository implements IRepository
     {
         $res = $this->setWhere($condition)->first();
 
-        if (!$res) {
-            throw (new ModelNotFoundException)->setModel(
+        throw_if(
+            $res && !$res instanceof Model,
+            (new ModelNotFoundException)->setModel(
                 get_class($this->entity->getModel())
-            );
-        }
+            )
+        );
 
         return $res;
     }
