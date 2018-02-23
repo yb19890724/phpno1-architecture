@@ -169,6 +169,17 @@ abstract class AbstractRepository implements IRepository
     }
 
     /**
+     * 批量插入操作
+     *
+     * @param array $properties
+     * @return bool
+     */
+    public function createForBatch(array $properties)
+    {
+        return $this->entity->insert($properties);
+    }
+
+    /**
      * 修改数据
      *
      * @param integer $id
@@ -189,6 +200,17 @@ abstract class AbstractRepository implements IRepository
     public function deleteById(int $id)
     {
         return $this->find($id)->delete();
+    }
+
+    /**
+     * 根据id批量删除
+     *
+     * @param array $ids
+     * @return int
+     */
+    public function deleteByIds(array $ids)
+    {
+        return $this->entity->destroy($ids);
     }
 
     /**

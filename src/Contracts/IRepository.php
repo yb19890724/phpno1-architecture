@@ -20,8 +20,10 @@ interface IRepository
     public function findWhereCount(...$condition);
     public function paginate(int $perPage = 10);
     public function create(array $properties);
+    public function createForBatch(array $properties);
     public function update(int $id, array $properties);
     public function deleteById(int $id);
+    public function deleteByIds(array $ids);
     public function withCriteria(...$criteria);
     public function toEntity();
     public function toRepository(Builder $entity);
