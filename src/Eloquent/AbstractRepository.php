@@ -103,7 +103,9 @@ abstract class AbstractRepository implements IRepository
 
         throw_if(
             !$model,
-            new ModelNotFoundException($this->entity->getModel(), $id)
+            (new ModelNotFoundException)->setModel(
+                get_class($this->entity->getModel())
+            )
         );
 
         return $model;
