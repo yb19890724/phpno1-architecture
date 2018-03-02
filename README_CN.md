@@ -47,7 +47,7 @@
     # 在config/app.php中
     'providers' => [
         // ......
-        App\Providers\RouteServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class,
     ];
 ```
 
