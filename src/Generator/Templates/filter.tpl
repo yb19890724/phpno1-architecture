@@ -7,7 +7,7 @@ use Phpno1\Repository\Filters\{
     IOrder
 };
 
-class {class_name}Filter extends AbstractFilter {sort_interface}
+class {class_name} extends AbstractFilter {sort_interface}
 {
     protected function mappings()
     {
