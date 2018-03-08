@@ -18,7 +18,7 @@ interface IRepository
     public function findWhere(...$condition);
     public function findWhereFirst(...$condition);
     public function findWhereCount(...$condition);
-    public function paginate(int $perPage = 10);
+    public function paginate(int $perPage = 0);
     public function create(array $properties);
     public function createForBatch(array $properties);
     public function update(int $id, array $properties);

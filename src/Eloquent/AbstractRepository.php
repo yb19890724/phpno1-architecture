@@ -152,9 +152,11 @@ abstract class AbstractRepository implements IRepository
      * @param integer $perPage
      * @return LengthAwarePaginator
      */
-    public function paginate(int $perPage = 10)
+    public function paginate(int $perPage = 0)
     {
-        $perPage = config('repository.pagination.limit') ?? $perPage;
+        if ($perPage <= 0) {
+            $perPage = config('repository.pagination.limit');
+        }
         
         return $this->entity->paginate($perPage);
     }
