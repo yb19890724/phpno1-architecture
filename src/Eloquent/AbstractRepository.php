@@ -24,6 +24,7 @@ use Illuminate\Support\Collection;
 
 /**
  * 仓储基本操作抽象
+ *
  * AbstractRepository class
  */
 abstract class AbstractRepository implements IRepository

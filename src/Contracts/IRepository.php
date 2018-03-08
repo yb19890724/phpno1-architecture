@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 /**
  *  仓储抽象层
+ *
  *  IRepository interface
  */
 interface IRepository
