@@ -52,6 +52,18 @@ trait FilterTrait
     }
 
     /**
+     * 获取查询的键值对数据
+     *
+     * @return array
+     */
+    protected function getSearchable()
+    {
+        return array_filter(
+            request()->only(array_keys($this->filterList))
+        );
+    }
+
+    /**
      * 执行过滤操作
      *
      * @return $this
@@ -66,6 +78,20 @@ trait FilterTrait
     }
 
     /**
+     * 获取排序的键值对数据
+     *
+     * @return array
+     */
+    protected function getOrderAble()
+    {
+        $request = [];
+        if (!empty($this->orderConfigs) && is_array($this->orderConfigs)) {
+            $request = array_intersect(request()->keys(), $this->orderConfigs);
+        }
+        return !empty($request) ? request()->only($request) : [];
+    }
+
+    /**
      * 执行单字段排序操作
      *
      * @return $this
@@ -73,15 +99,14 @@ trait FilterTrait
     public function doOrder()
     {
         $orderInfo = $this->getOrderable();
-
         if (!empty($orderInfo)) {
-            $key  = $orderInfo[$this->orderConfigs['field']];
-            $type = $orderInfo[$this->orderConfigs['type']];
-            $this->entity = $this->resolveOrder($key)->order($this->entity, $type);
+            foreach ($orderInfo as $key => $value) {
+                $this->entity = $this->resolveOrder($key)->order($this->entity, $value);
+            }
         }
-
         return $this;
     }
+
 
     /**
      * 获取实例对象
@@ -106,7 +131,7 @@ trait FilterTrait
             !$filter instanceof IFilter,
             new IllegalFilterInstanceException()
         );
-        
+
         return $filter;
     }
 
@@ -126,31 +151,5 @@ trait FilterTrait
         );
 
         return $order;
-    }
-
-    /**
-     * 获取查询的键值对数据
-     *
-     * @return array
-     */
-    protected function getSearchable()
-    {
-        return array_filter(
-            request()->only(array_keys($this->filterList))
-        );
-    }
-
-    /**
-     * 获取排序的键值对数据
-     *
-     * @return array
-     */
-    protected function getOrderable()
-    {
-        $list = array_filter(
-            request()->only([$this->orderConfigs['field'], $this->orderConfigs['type']])
-        );
-
-        return count($list) === count($this->orderConfigs) ? $list : [];
     }
 }
