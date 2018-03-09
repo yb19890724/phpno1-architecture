@@ -227,16 +227,17 @@ abstract class AbstractRepository implements IRepository
     public function withCriteria(...$criteria)
     {
         $criteria = array_flatten($criteria);
-    
+        $model=clone $this->entity;
+
         foreach ($criteria as $item) {
             throw_if(
                 !$item instanceof ICriteria,
                 new IllegalCriteriaInstanceException()
             );
-            $this->entity = $item->apply($this->entity);
+            $model = $item->apply($this->entity);
         }
 
-        return $this;
+        return $model;
     }
 
     /**
