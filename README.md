@@ -1,4 +1,4 @@
-<h1 align="center">phpno1-architecture</h1>
+<h2>laravel framework project architecture</h2>
 <p align="center">
 
 [![Latest Stable Version](https://poser.pugx.org/phpno1/architecture/v/stable)](https://packagist.org/packages/phpno1/architecture)

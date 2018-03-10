@@ -1,4 +1,4 @@
-<h1 align="center">phpno1-architecture</h1>
+<h2>laravel框架开发项目架构扩展包</h2>
 
 
 <p align="center">
