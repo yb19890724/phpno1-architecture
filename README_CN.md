@@ -31,7 +31,7 @@
 执行以下命令获取包的最新版本:
 
 ```php
-    composer require phpno1/repository
+    composer require phpno1/architecture
 ```
 
 #### 发布配置文件

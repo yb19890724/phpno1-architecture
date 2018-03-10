@@ -13,7 +13,7 @@ Installation
 Composer
 Execute the following command to get the latest version of the package:
 
-composer require phpno1/repository
+composer require phpno1/architecture
 
 ### Laravel
 
