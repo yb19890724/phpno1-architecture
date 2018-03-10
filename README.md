@@ -23,12 +23,12 @@ ServiceProvider will be attached automatically
 
 #### Other
 
-In your `config/app.php` add `Phpno1\architecture\providers\RepositoryServiceProvider::class` to the end of the `providers` array:
+In your `config/app.php` add `Phpno1\architecture\providers\ArchitectureServiceProvider::class` to the end of the `providers` array:
 
 ```php
 'providers' => [
     ...
-    Phpno1\Repository\providers\RepositoryServiceProvider::class,
+    Phpno1\Repository\providers\ArchitectureServiceProvider::class,
 ],
 ```
 

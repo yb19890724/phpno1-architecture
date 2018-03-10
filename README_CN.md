@@ -37,7 +37,7 @@
 #### 发布配置文件
 
 ```php
-    php artisan vendor:publish --tag=repository
+    php artisan vendor:publish --tag=architecture
 ```
 
 #### 注册到服务容器
@@ -48,7 +48,7 @@
     # 在config/app.php中
     'providers' => [
         // ......
-        App\Providers\RepositoryServiceProvider::class,
+        App\Providers\ArchitectureServiceProvider::class,
     ];
 ```
 
