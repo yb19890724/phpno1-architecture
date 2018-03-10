@@ -42,7 +42,7 @@
 
 #### 注册到服务容器
 
-说明：用命令生成仓储文件时(phpno1:entity和phpno1:repository)，会自动生成RepositoryServiceProvider文件。
+说明：用命令生成仓储文件时(phpno1:entity和phpno1:repository)，会自动生成ArchitectureServiceProvider文件。
 
 ```php
     # 在config/app.php中

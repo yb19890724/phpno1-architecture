@@ -33,10 +33,10 @@ return [
         'root_namespace' => 'App\\',
         'namespace' => [
             'controller'          => 'Backend',
-            'repository_eloquent' => 'Architecture\\Eloquent',
-            'repository'          => 'Architecture\\Contracts',
+            'repository_eloquent' => 'Repository\\Eloquent',
+            'repository'          => 'Repository\\Contracts',
             'criteria'            => 'Architecture\\Criterias',
-            'provider'            => 'Architecture\\ArchitectureServiceProvider',
+            'provider'            => 'Providers\\ArchitectureServiceProvider',
             'service'             => 'Services',
             'model'               => 'Models',
             'response'            => 'Http\\Responses',
