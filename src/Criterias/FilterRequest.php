@@ -1,8 +1,8 @@
 <?php
 
-namespace Phpno1\Repository\Criterias;
+namespace Phpno1\Architecture\Criterias;
 
-use Phpno1\Repository\Traits\FilterTrait;
+use Phpno1\Architecture\Traits\FilterTrait;
 
 /**
  * FilterRequest class

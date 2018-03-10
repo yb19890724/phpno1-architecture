@@ -23,7 +23,7 @@ ServiceProvider will be attached automatically
 
 #### Other
 
-In your `config/app.php` add `Phpno1\Repository\providers\RepositoryServiceProvider::class` to the end of the `providers` array:
+In your `config/app.php` add `Phpno1\architecture\providers\RepositoryServiceProvider::class` to the end of the `providers` array:
 
 ```php
 'providers' => [
@@ -67,7 +67,7 @@ class TestRepositoryEloquent extends AbstractRepository implements ITestReposito
 
 ## Methods
 
-### Phpno1\Repository\Contracts\IRepository;
+### Phpno1\Architecture\Contracts\IRepository;
 
 - function entity();
 - function all();
@@ -85,7 +85,7 @@ class TestRepositoryEloquent extends AbstractRepository implements ITestReposito
 - function toEntity();
 - function toRepository(Builder $entity);
 
-### Phpno1\Repository\Eloquent;
+### Phpno1\Architecture\Eloquent;
 
 
   ```php

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpno1\Repository\Exceptions;
+namespace Phpno1\Architecture\Exceptions;
 
 /**
  * 模型实例没有找到

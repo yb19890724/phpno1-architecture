@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: king
- * Date: 2018/2/6
- * Time: 下午9:40
- */
 
-namespace Phpno1\Repository\Generator;
+namespace Phpno1\Architecture\Generator;
 
 
 use Illuminate\Support\Facades\File;
@@ -36,7 +30,7 @@ trait GeneratorHelp
 
     protected function generatorInit()
     {
-        $this->generatorConfig = config('repository.generator');
+        $this->generatorConfig = config('architecture.generator');
     }
 
     protected function getNamespaceByType($type)

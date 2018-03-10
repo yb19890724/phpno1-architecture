@@ -1,10 +1,10 @@
 <?php
 
-namespace Phpno1\Repository\Eloquent;
+namespace Phpno1\Architecture\Eloquent;
 
 use Illuminate\Support\Facades\DB;
-use Phpno1\Repository\Criterias\ICriteria;
-use Phpno1\Repository\Contracts\IRepository;
+use Phpno1\Architecture\Criterias\ICriteria;
+use Phpno1\Architecture\Contracts\IRepository;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 use Illuminate\Database\Eloquent\{
@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\{
     ModelNotFoundException
 };
 
-use Phpno1\Repository\Exceptions\{
+use Phpno1\Architecture\Exceptions\{
     RepositoryCastFailException,
     NoEntityDefinedException,
     IllegalCriteriaInstanceException,
@@ -156,7 +156,7 @@ abstract class AbstractRepository implements IRepository
     public function paginate(int $perPage = 0)
     {
         if ($perPage <= 0) {
-            $perPage = config('repository.pagination.limit');
+            $perPage = config('architecture.pagination.limit');
         }
         
         return $this->entity->paginate($perPage);

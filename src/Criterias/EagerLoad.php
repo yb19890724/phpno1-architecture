@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpno1\Repository\Criterias;
+namespace Phpno1\Architecture\Criterias;
 
 /**
  * EagerLoad class

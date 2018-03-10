@@ -1,9 +1,9 @@
 <?php
 
-namespace Phpno1\Repository\Generator\Commands;
+namespace Phpno1\Architecture\Generator\Commands;
 
 use Illuminate\Console\Command;
-use Phpno1\Repository\Generator\GeneratorHelp;
+use Phpno1\Architecture\Generator\GeneratorHelp;
 
 class CreateResponse extends Command
 {

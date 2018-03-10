@@ -1,9 +1,9 @@
 <?php
 
-namespace Phpno1\Repository\Traits;
+namespace Phpno1\Architecture\Traits;
 
-use Phpno1\Repository\Exceptions\IllegalFilterInstanceException;
-use Phpno1\Repository\Filters\{
+use Phpno1\Architecture\Exceptions\IllegalFilterInstanceException;
+use Phpno1\Architecture\Filters\{
     IFilter,
     IOrder
 };
@@ -44,7 +44,7 @@ trait FilterTrait
      */
     public function init($entity, $filterList)
     {
-        $this->orderConfigs = config('repository.order');
+        $this->orderConfigs = config('architecture.order');
         $this->entity = $entity;
         $this->filterList = $filterList;
 

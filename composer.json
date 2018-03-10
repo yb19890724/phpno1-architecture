@@ -24,18 +24,18 @@
     "autoload":{
         "psr-4":{
             "App\\": "app/",
-            "Phpno1\\Repository\\":"src/"
+            "Phpno1\\Architecture\\":"src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Phpno1\\Repository\\Test\\": "tests/"
+            "Phpno1\\Architecture\\Test\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Phpno1\\Repository\\Providers\\RepositoryServiceProvider"
+                "Phpno1\\Architecture\\Providers\\ArchitectureServiceProvider"
             ]
         }
     }

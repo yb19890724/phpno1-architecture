@@ -1,10 +1,10 @@
 <?php
 
-namespace Phpno1\Repository\Criterias;
+namespace Phpno1\Architecture\Criterias;
 
 /**
  * Interface ICriteria
- * @package Phpno1\Repository\Criterias
+ * @package Phpno1\Architecture\Criterias
  */
 interface ICriteria
 {

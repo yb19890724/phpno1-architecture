@@ -1,10 +1,10 @@
 <?php
 
-namespace Phpno1\Repository\Criterias;
+namespace Phpno1\Architecture\Criterias;
 
 /**
  * Class ByCreateTime
- * @package App\Repository\Criterias
+ * @package App\Architecture\Criterias
  */
 class ByCreateTime implements ICriteria
 {

@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: king
- * Date: 2018/2/13
- * Time: 下午9:53
- */
 
-namespace Phpno1\Repository\Traits;
+namespace Phpno1\Architecture\Traits;
 
 
 trait CacheGenerate
@@ -28,7 +22,7 @@ trait CacheGenerate
     protected function getOrCache($key, callable $callableOnMiss)
     {
         $key = $this->cacheKeyPrefix ?? class_basename($this) . ':' . $key;
-        $cacheConfig = config('repository.cache') ?? $this->defaultCacheSettings;
+        $cacheConfig = config('architecture.cache') ?? $this->defaultCacheSettings;
 
         if ($cacheConfig['enabled']) {
             $cache = cache();
