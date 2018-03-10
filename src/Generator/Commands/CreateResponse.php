@@ -56,7 +56,7 @@ class CreateResponse extends Command
     {
         return [
             'class_name'           => $this->name,
-            'namespace'            => $this->getFullNamespaceByType(static::COMMAND_KEY),
+            'namespace'            => $this->getFullNamespaceByType(static::COMMAND_KEY).'\\'.$this->name,
         ];
     }
 }
