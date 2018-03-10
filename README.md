@@ -1,4 +1,4 @@
-<h1 align="center">phpno1-repository</h1>
+<h1 align="center">phpno1-architecture</h1>
 <p align="center">
 
 [![Latest Stable Version](https://poser.pugx.org/phpno1/repository/v/stable)](https://packagist.org/packages/phpno1/repository)
