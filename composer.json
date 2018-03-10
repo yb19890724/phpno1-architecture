@@ -1,8 +1,8 @@
 {
-    "name": "phpno1/repository",
-    "description": "an repository for laravel",
-    "keywords": ["laravel", "repository", "eloquent", "model"],
-    "homepage": "https://github.com/yb19890724/phpno1-repository",
+    "name": "phpno1/architecture",
+    "description": "an architecture for laravel",
+    "keywords": ["laravel","architecture", "repository", "eloquent", "model",""],
+    "homepage": "https://github.com/yb19890724/phpno1-architecture",
     "license": "MIT",
     "authors": [
         {
