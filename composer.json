@@ -1,7 +1,7 @@
 {
     "name": "phpno1/architecture",
     "description": "an architecture for laravel",
-    "keywords": ["laravel","architecture", "repository", "eloquent", "model",""],
+    "keywords": ["laravel","architecture", "repository", "eloquent", "model"],
     "homepage": "https://github.com/yb19890724/phpno1-architecture",
     "license": "MIT",
     "authors": [
