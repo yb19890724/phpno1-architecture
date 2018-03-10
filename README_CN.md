@@ -3,9 +3,9 @@
 
 <p align="center">
 
-[![Latest Stable Version](https://poser.pugx.org/phpno1/repository/v/stable)](https://packagist.org/packages/phpno1/repository)
-[![Total Downloads](https://poser.pugx.org/phpno1/repository/downloads)](https://packagist.org/packages/phpno1/repository)
-[![Build Status](https://travis-ci.org/yb19890724/phpno1-repository.svg?branch=devlop)](https://travis-ci.org/yb19890724/phpno1-repository)
+[![Latest Stable Version](https://poser.pugx.org/phpno1/architecture/v/stable)](https://packagist.org/packages/phpno1/architecture)
+[![Total Downloads](https://poser.pugx.org/phpno1/architecture/downloads)](https://packagist.org/packages/phpno1/architecture)
+[![License](https://poser.pugx.org/phpno1/architecture/license)](https://packagist.org/packages/phpno1/architecture)
 
 
 </p>
