@@ -8,7 +8,7 @@
 
 </p>
 
-<a href="https://github.com/yb19890724/phpno1-repository/blob/master/README_CN.md">中文说明</a></p>
+<a href="https://github.com/yb19890724/phpno1-architecture/blob/master/README_CN.md">中文说明</a></p>
 Installation
 Composer
 Execute the following command to get the latest version of the package:
