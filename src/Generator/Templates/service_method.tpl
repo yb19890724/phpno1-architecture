@@ -1,20 +1,20 @@
    /**
-    * Get {class_name} list and paginate.
+    * Get {classes_name}  and paginate.
     *
     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
     */
-    public function get{class_name}List()
+    public function get{classes_name}()
     {
         return $this->{var_name}Repository->paginate();
     }
 
    /**
-    * Get one {class_name} Detail by primary key.
+    * Get one {class_name}  by primary key.
     *
     * @param $id
     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|static[]|static|null
     */
-    public function get{class_name}Detail($id)
+    public function get{class_name}($id)
     {
         return $this->{var_name}Repository->find($id);
     }
