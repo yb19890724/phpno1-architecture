@@ -35,33 +35,33 @@ In your `config/app.php` add `Phpno1\architecture\providers\ArchitectureServiceP
 ## Usage
 
 ```php
-<?php
 
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Test extends Model
+class User extends Model
 {
-
+    // something...
 }
 ```
 
 #### create repository
 ```php
-<?php
 
 namespace App\Repositories\Eloquent;
-use App\Test;
 
-use App\Repositories\AbstractRepository;
+use App\User;
 
-class TestRepositoryEloquent extends AbstractRepository implements ITestRepository
+class UserRepositoryEloquent extends AbstractRepository implements UserRepository
 {
-    public function entity()
+    // 绑定User模型
+    public function entity()
     {
-            return Test::class;
+        return User::class;
     }
+
+    // 其他仓储方法...
 }
 ```
 
