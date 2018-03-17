@@ -115,7 +115,7 @@ trait GeneratorHelp
     {
         if ($option) {
             $methodContent = $this->getTplContent($methodType);
-            $methodContent = $this->replaceTplVars($methodContent, ['class_name' => $name,'classes_name'=>Str::plural(lcfirst($name))]);
+            $methodContent = $this->replaceTplVars($methodContent, ['class_name' => $name,'classes_name'=>Str::plural($name)]);
 
             return $this->replaceTplVars($content, [$methodType => $methodContent, 'var_name' => lcfirst($name)]);
         }
