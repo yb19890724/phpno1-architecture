@@ -2,7 +2,7 @@
 
 namespace Phpno1\Architecture\Generator;
 
-
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use League\Flysystem\FileExistsException;
 
