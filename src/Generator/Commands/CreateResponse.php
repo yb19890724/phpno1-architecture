@@ -26,6 +26,8 @@ class CreateResponse extends Command
 
     protected $option;
 
+    protected $namespace;
+
     protected const COMMAND_KEY = 'response';
 
     /**
@@ -48,6 +50,7 @@ class CreateResponse extends Command
     {
         $this->name = ucfirst($this->argument('name'));
         $this->option = $this->option('dir') ?? '';
+        $this->namespace = !empty($this->option)?'\\'.ucfirst($this->option):'';
         $tplContent = $this->getFullTplContent(static::COMMAND_KEY, $this->name, null);
         $this->writeFileByType(static::COMMAND_KEY, $this->name, $tplContent, $this->option);
     }
@@ -56,7 +59,7 @@ class CreateResponse extends Command
     {
         return [
             'class_name'           => $this->name,
-            'namespace'            => $this->getFullNamespaceByType(static::COMMAND_KEY).'\\'.ucfirst($this->option),
+            'namespace'            => $this->getFullNamespaceByType(static::COMMAND_KEY).$this->namespace ,
         ];
     }
 }

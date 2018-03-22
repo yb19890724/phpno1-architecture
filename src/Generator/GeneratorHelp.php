@@ -2,7 +2,7 @@
 
 namespace Phpno1\Architecture\Generator;
 
-
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use League\Flysystem\FileExistsException;
 
@@ -115,7 +115,7 @@ trait GeneratorHelp
     {
         if ($option) {
             $methodContent = $this->getTplContent($methodType);
-            $methodContent = $this->replaceTplVars($methodContent, ['class_name' => $name,'classes_name'=>Str::plural(lcfirst($name))]);
+            $methodContent = $this->replaceTplVars($methodContent, ['class_name' => $name,'classes_name'=>Str::plural(ucfirst($name))]);
 
             return $this->replaceTplVars($content, [$methodType => $methodContent, 'var_name' => lcfirst($name)]);
         }
