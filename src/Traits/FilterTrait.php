@@ -58,6 +58,8 @@ trait FilterTrait
      */
     protected function getSearchable()
     {
+        //获取path params 合并到request里面
+        request()->merge(request()->route()->parameters());
         return array_filter(
             request()->only(array_keys($this->filterList))
         );
