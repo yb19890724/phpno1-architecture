@@ -65,18 +65,18 @@ class CreateEntity extends Command
         }
 
         if ($this->confirm('Do you want to create Request ? [y|n]')) {
-            $name = $this->name . 'StoreRequest';
+            $name = 'StoreRequest';
             $this->call('phpno1:request', ['name' => $name, '--dir' => $this->name]);
-            $name = $this->name . 'UpdateRequest';
+            $name = 'UpdateRequest';
             $this->call('phpno1:request', ['name' => $name, '--dir' => $this->name]);
         } else {
             $this->warn('skip');
         }
 
         if ($this->confirm('Do you want to create Response ? [y|n]')) {
-            $name = $this->name . 'IndexResponse';
+            $name = 'IndexResponse';
             $this->call('phpno1:response', ['name' => $name, '--dir' => $this->name]);
-            $name = $this->name . 'ShowResponse';
+            $name = 'ShowResponse';
             $this->call('phpno1:response', ['name' => $name, '--dir' => $this->name]);
         } else {
             $this->warn('skip');
