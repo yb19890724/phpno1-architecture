@@ -43,6 +43,21 @@ abstract class AbstractRepository implements IRepository
     }
 
     /**
+     * callback model scope method
+     * @param string $name
+     * @param string $parameters
+     * @return $this
+     */
+    public function __call($method, $parameters)
+    {
+        if (method_exists($this->entity, $scope = 'scope'.ucfirst($method))) {
+            $this->entity=$this->entity->$scope($parameters);
+            return $this;
+        }
+    }
+
+
+    /**
      * 初始化加载器，子类重写后使用
      * 
      * @return void
