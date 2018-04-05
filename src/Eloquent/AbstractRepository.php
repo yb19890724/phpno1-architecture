@@ -51,10 +51,15 @@ abstract class AbstractRepository implements IRepository
     public function __call($method, $parameters)
     {
         if (method_exists($this->entity, $scope = 'scope'.ucfirst($method))) {
-            $this->entity=$this->entity->$scope($parameters);
+
+            array_unshift($parameters, $this->entity);
+
+            $this->entity=$this->entity->$scope(...array_values($parameters));
+
             return $this;
         }
     }
+
 
 
     /**
