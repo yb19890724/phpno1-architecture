@@ -37,7 +37,7 @@
 #### 发布配置文件
 
 ```php
-    php artisan vendor:publish --tag=architecture
+    php artisan vendor:publish --provider "Phpno1\Architecture\Providers\ArchitectureServiceProvider"
 ```
 
 #### 注册到服务容器
