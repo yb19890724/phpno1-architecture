@@ -508,7 +508,9 @@ class NameFilter extends AbstractFilter implements IOrder
 ## scope
 
 ### 这里仓库层中的scope方法是兼容laravel模型的scope方法调用
-<font color='red'>注意如果调用scope方法请注意，必须先调用再执行withCriteria进行过滤</font>
+
+<font color="red">注意如果调用scope方法请注意，必须先调用再执行withCriteria进行过滤</font>
+
 ```php
 
 //模型中定义
