@@ -466,7 +466,7 @@ class NameFilter extends AbstractFilter
 ### 编写要排序的业务
 
 注意:如果你需要字段排序,首先需要在生成的配置文件architecture.php中定义你需要的排序接收参数
-在过滤类中<font color="red">必须实现接口 "IOrder"</font>！！！
+<p>在过滤类中<font color="red">必须实现接口 "IOrder"</font>！！！</p>
 
 ```php
 namespace App\Repositories\Filters\Admin;
@@ -507,7 +507,7 @@ class NameFilter extends AbstractFilter implements IOrder
 
 ### 这里仓库层中的scope方法是兼容laravel模型的scope方法调用
 
-<font color="red">注意如果调用scope方法请注意，必须先调用再执行withCriteria进行过滤</font>
+<p><font color="red">注意如果调用scope方法请注意，必须先调用再执行withCriteria进行过滤</font></p>
 
 ```php
 
