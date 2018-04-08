@@ -14,13 +14,13 @@ class ArchitectureServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/architecture.php' => config_path('architecture.php')
+            __DIR__ . '/../Config/architecture.php' => config_path('architecture.php')
         ]);
 
         
-        $this->mergeConfigFrom(__DIR__ . '/../config/architecture.php', 'architecture');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/architecture.php', 'architecture');
 
-        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'architecture');
+        $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'architecture');
     }
 
     /**
