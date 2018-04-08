@@ -468,8 +468,6 @@ class NameFilter extends AbstractFilter
 注意:如果你需要字段排序,首先需要在生成的配置文件architecture.php中定义你需要的排序接收参数
 在过滤类中<font color="red">必须实现接口 "IOrder"</font>！！！
 
-
-
 ```php
 namespace App\Repositories\Filters\Admin;
 
