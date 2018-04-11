@@ -27,6 +27,7 @@
 - <a href="#使用">使用</a>
     - <a href="#快速使用">快速使用</a>
     - <a href="#方法介绍">方法介绍</a>
+    - <a href="#初始化加载">初始化加载</a>
     - <a href="#限制条件">限制条件</a>
     - <a href="#排序字段">排序字段</a>
     - <a href="#过滤条件">过滤条件</a>
@@ -387,7 +388,14 @@ class UserIndexResponse implements Responsable
     // 把Build对象转回Repository对象
     $this->repository->toRepository(Builder $entity);
   ```
- 
+## 初始化加载
+```php
+    //请重写boot方法 不要重写构造方法
+    function boot()
+    {
+    }
+```
+
 ## 限制条件
  
 ### 编写Criteria类
