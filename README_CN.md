@@ -69,8 +69,9 @@
     ];
 ```
 
-## 配置 architecture.php
+## 配置 
 ```php
+    //architecture.php
     'pagination' => [//默认分页数量
         'limit' => 20
     ],
