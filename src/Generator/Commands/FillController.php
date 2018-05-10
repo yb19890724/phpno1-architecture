@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Phpno1\Architecture\Generator\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
