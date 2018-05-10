@@ -15,9 +15,7 @@ class {class_name} implements Responsable
 
     public function toResponse($request)
     {
-        $data = $this->transform();
-
-        return $data;
+        return $this->transform();
     }
 
     protected function transform()
