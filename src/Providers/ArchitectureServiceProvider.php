@@ -42,6 +42,7 @@ class ArchitectureServiceProvider extends ServiceProvider
         $this->commands('Phpno1\Architecture\Generator\Commands\CreateService');
         $this->commands('Phpno1\Architecture\Generator\Commands\CreateProvider');
         $this->commands('Phpno1\Architecture\Generator\Commands\CreateBinding');
+        $this->commands('Phpno1\Architecture\Generator\Commands\FillController');
         //end-binding
     }
 }
