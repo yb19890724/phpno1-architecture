@@ -5,6 +5,7 @@ namespace Phpno1\Architecture\Generator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use League\Flysystem\FileExistsException;
+use League\Flysystem\FileNotFoundException;
 
 trait GeneratorHelp
 {
@@ -26,6 +27,7 @@ trait GeneratorHelp
         'response'             => 'response.tpl',
         'service'              => 'service.tpl',
         'provider'             => 'provider.tpl',
+        'controller'           => 'controller_fill.tpl'
     ];
 
     protected function generatorInit()
@@ -165,4 +167,22 @@ trait GeneratorHelp
         $name = ucfirst(camel_case($name));
         $this->info($name . ' created successfully.');
     }
+
+    protected function fileReplaceContent($type, $name, $content, $basePath = '')
+    {
+        $fileClassName = $name . ucfirst($type);
+        $path = $this->getNamespaceByType($type);
+        $fileName = $basePath . '/' . $path;
+        $fileName = app_path(str_replace('\\', '/', $fileName)) . '/' . $fileClassName . '.php';
+
+        throw_if(
+            !File::exists($fileName),
+            new FileNotFoundException($fileName)
+        );
+
+        File::put($fileName, $content);
+        $this->info($fileClassName . ' replace successfully.');
+    }
+
+
 }
