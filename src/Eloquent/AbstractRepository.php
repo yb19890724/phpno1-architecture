@@ -50,25 +50,33 @@ abstract class AbstractRepository implements IRepository
      */
     public function __call($method, $parameters)
     {
-        if (method_exists($this->entity, $scope = 'scope'.ucfirst($method))) {
+        if (method_exists($this->entity, $scope = 'scope' . ucfirst($method))) {
 
             array_unshift($parameters, $this->entity);
 
-            $this->entity=$this->entity->$scope(...array_values($parameters));
+            $this->entity = $this->entity->$scope(...array_values($parameters));
 
             return $this;
         }
     }
 
 
-
     /**
      * 初始化加载器，子类重写后使用
-     * 
+     *
      * @return void
      */
     public function boot()
     {
+    }
+
+    /**
+     * 复制模型
+     * @return \Builder|\Model
+     */
+    private function cloneModel()
+    {
+        return clone $this->entity;
     }
 
     /**
@@ -78,7 +86,7 @@ abstract class AbstractRepository implements IRepository
      */
     public function all()
     {
-        return $this->entity->get();
+        return $this->cloneModel()->get();
     }
 
     /**
@@ -88,7 +96,7 @@ abstract class AbstractRepository implements IRepository
      */
     public function first()
     {
-        return $this->entity->first();
+        return $this->cloneModel()->first();
     }
 
     /**
@@ -98,7 +106,7 @@ abstract class AbstractRepository implements IRepository
      */
     public function count()
     {
-        return $this->entity->count();
+        return $this->cloneModel()->count();
     }
 
     /**
@@ -120,7 +128,7 @@ abstract class AbstractRepository implements IRepository
      */
     public function find($id)
     {
-        $model = $this->entity->find($id);
+        $model = $this->cloneModel()->find($id);
 
         throw_if(
             !$model,
@@ -136,7 +144,7 @@ abstract class AbstractRepository implements IRepository
      * 根据条件查询获取多行结果集
      *
      * findWhere('id', '>', 29) 或者 findWhere(['id', '>', 29],...)
-     * 
+     *
      * @param array ...$condition
      * @return Collection
      */
@@ -148,7 +156,7 @@ abstract class AbstractRepository implements IRepository
     /**
      * 获取一行记录
      * 参数同findWhere
-     * 
+     *
      * @param [type] $column
      * @param [type] $value
      * @return Collection
@@ -178,8 +186,8 @@ abstract class AbstractRepository implements IRepository
         if ($perPage <= 0) {
             $perPage = config('architecture.pagination.limit');
         }
-        
-        return $this->entity->paginate($perPage);
+
+        return $this->cloneModel()->paginate($perPage);
     }
 
     /**
@@ -190,7 +198,7 @@ abstract class AbstractRepository implements IRepository
      */
     public function create(array $properties)
     {
-        return $this->entity->create($properties);
+        return $this->cloneModel()->create($properties);
     }
 
     /**
@@ -201,7 +209,7 @@ abstract class AbstractRepository implements IRepository
      */
     public function createForBatch(array $properties)
     {
-        return $this->entity->insert($properties);
+        return $this->cloneModel()->insert($properties);
     }
 
     /**
@@ -235,7 +243,7 @@ abstract class AbstractRepository implements IRepository
      */
     public function deleteByIds(array $ids)
     {
-        return $this->entity->destroy($ids);
+        return $this->cloneModel()->destroy($ids);
     }
 
     /**
@@ -247,7 +255,7 @@ abstract class AbstractRepository implements IRepository
     public function withCriteria(...$criteria)
     {
         $criteria = array_flatten($criteria);
-        $model=clone $this->entity;
+        $model = $this->cloneModel();
 
         foreach ($criteria as $item) {
             throw_if(
@@ -323,22 +331,23 @@ abstract class AbstractRepository implements IRepository
 
     /**
      * where条件的组装
-     * 
+     *
      * @param array $condition
      * @return IRepository
      */
     protected function setWhere(array $condition)
     {
+        $model = $this->cloneModel();
         foreach ($condition as $item) {
             if (!is_array($item)) {
-                $this->entity = $this->setConditions($condition);
+                $model = $this->setConditions($condition);
                 break;
             }
 
-            $this->entity = $this->setConditions($item);
+            $model = $this->setConditions($item);
         }
 
-        return $this;
+        return $model;
     }
 
     /**
@@ -350,15 +359,15 @@ abstract class AbstractRepository implements IRepository
     protected function setConditions(array $condition)
     {
         $count = count($condition);
-        
+
         throw_if(
             $count < 2,
             new NotEnoughWhereParamsException()
         );
-        
-        return $this->entity->where(
-            $condition[0], 
-            $condition[1], 
+
+        return $this->cloneModel()->where(
+            $condition[0],
+            $condition[1],
             $condition[2] ?? null
         );
     }
