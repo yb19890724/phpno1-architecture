@@ -455,5 +455,18 @@ abstract class AbstractRepository implements IRepository
         );
     }
 
+    /**
+     * 选择要的字段
+     *
+     * @param array ...$value
+     * @return $this
+     */
+
+    public function select(...$value)
+    {
+        $this->entity = $this->entity->select($value);
+
+        return $this;
+    }
 
 }
