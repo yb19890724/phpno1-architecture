@@ -462,7 +462,7 @@ abstract class AbstractRepository implements IRepository
      * @return $this
      */
 
-    public function select(...$value)
+    public function select($value)
     {
         $this->entity = $this->entity->select($value);
 
