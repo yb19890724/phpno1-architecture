@@ -344,7 +344,7 @@ abstract class AbstractRepository implements IRepository
                 !$item instanceof ICriteria,
                 new IllegalCriteriaInstanceException()
             );
-            $model = $item->apply($this->entity);
+            $model = $item->apply($model);
         }
 
         $this->resetModel();
