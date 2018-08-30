@@ -100,7 +100,9 @@ trait FilterTrait
      */
     public function doOrder()
     {
-        $orderInfo = $this->getOrderable();
+        //$orderInfo = $this->getOrderable();
+        $orderInfo = array_only($this->getOrderable(),array_keys($this->filterList));
+
         if (!empty($orderInfo)) {
             foreach ($orderInfo as $key => $value) {
                 $this->entity = $this->resolveOrder($key)->order($this->entity, $value);
