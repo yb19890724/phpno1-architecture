@@ -508,8 +508,8 @@ class NameFilter extends AbstractFilter implements IOrder
  // 过滤name和email
  http://www.phpno1.com/user?name=Anthony&email=king19800105@163.com
  
- // 过滤和排序组合。参数"o"表示排序方式。参数"orderable"表示要排序的字段
- http://www.phpno1.com/user?name=Anthony&email=king19800105@163.com&o=desc&orderable=name
+ // 过滤和排序组合。参数"o"是需要排序的字段key,value是排序规则 asc|desc,o参数是在architecture.php中配置的，可以定义多个参数。
+ http://www.phpno1.com/user?name=Anthony&email=king19800105@163.com&o=desc
 ```
 
 ## scope
@@ -580,5 +580,6 @@ public function do()
 + 建议文件生成都使用命令来操作。
 + 过滤必须要继承AbstractFilter (有特殊需求的可以实现IFilter接口) ，过滤必须实现IOrder接口。
 + 过滤和排序都是可选的。
++ 需要排序的字段必须在architecture.php中定义你需要的排序接收参数,否则参数无法接收。
 + 通过重写过滤中的mappings()方法来改变数据库字段和过滤使用的参数映射关系。
 + 通过重写AbstractFilter中的resolveOrderDirection()方法来改变排序方式的映射关系。
