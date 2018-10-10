@@ -17,10 +17,10 @@ class ArchitectureServiceProvider extends ServiceProvider
             __DIR__ . '/../Config/architecture.php' => config_path('architecture.php')
         ]);
 
-        
-        $this->mergeConfigFrom(__DIR__ . '/../Config/architecture.php', 'architecture');
 
-        $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'architecture');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/architecture.php' , 'architecture');
+
+        $this->loadTranslationsFrom(__DIR__ . '/../Lang' , 'architecture');
     }
 
     /**

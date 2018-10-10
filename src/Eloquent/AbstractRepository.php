@@ -8,15 +8,15 @@ use Phpno1\Architecture\Contracts\IRepository;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 use Illuminate\Database\Eloquent\{
-    Builder,
-    Model,
+    Builder ,
+    Model ,
     ModelNotFoundException
 };
 
 use Phpno1\Architecture\Exceptions\{
-    RepositoryCastFailException,
-    NoEntityDefinedException,
-    IllegalCriteriaInstanceException,
+    RepositoryCastFailException ,
+    NoEntityDefinedException ,
+    IllegalCriteriaInstanceException ,
     NotEnoughWhereParamsException
 };
 
@@ -44,15 +44,15 @@ abstract class AbstractRepository implements IRepository
 
     /**
      * callback model scope method
-     * @param string $name
-     * @param string $parameters
+     * @param $method
+     * @param $parameters
      * @return $this
      */
-    public function __call($method, $parameters)
+    public function __call($method , $parameters)
     {
-        if (method_exists($this->entity, $scope = 'scope' . ucfirst($method))) {
+        if (method_exists($this->entity , $scope = 'scope' . ucfirst($method))) {
 
-            array_unshift($parameters, $this->entity);
+            array_unshift($parameters , $this->entity);
 
             $this->entity = $this->entity->$scope(...array_values($parameters));
 
@@ -70,14 +70,6 @@ abstract class AbstractRepository implements IRepository
     {
     }
 
-    /*/**
-     * 复制模型
-     * @return \Builder|\Model
-
-    private function rest()
-    {
-        return clone $this->entity;
-    }*/
 
     /**
      * 重置模型
@@ -96,7 +88,7 @@ abstract class AbstractRepository implements IRepository
     protected function resolveEntity()
     {
         throw_if(
-            !method_exists($this, 'entity'),
+            ! method_exists($this , 'entity') ,
             new NoEntityDefinedException()
         );
 
@@ -173,7 +165,7 @@ abstract class AbstractRepository implements IRepository
         $model = $this->entity->find($id);
 
         throw_if(
-            !$model,
+            ! $model ,
             (new ModelNotFoundException)->setModel(
                 get_class($this->entity->getModel())
             )
@@ -210,7 +202,7 @@ abstract class AbstractRepository implements IRepository
         $res = $this->setWhere($condition)->first();
 
         throw_if(
-            $res && !$res instanceof Model,
+            $res && ! $res instanceof Model ,
             (new ModelNotFoundException)->setModel(
                 get_class($this->entity->getModel())
             )
@@ -275,12 +267,12 @@ abstract class AbstractRepository implements IRepository
      * @param array $properties
      * @return boolean
      */
-    public function update(int $id, array $properties)
+    public function update(int $id , array $properties)
     {
         $model = $this->entity->find($id);
 
         throw_if(
-            !$model,
+            ! $model ,
             (new ModelNotFoundException)->setModel(
                 get_class($this->entity->getModel())
             )
@@ -304,7 +296,7 @@ abstract class AbstractRepository implements IRepository
         $model = $this->entity->find($id);
 
         throw_if(
-            !$model,
+            ! $model ,
             (new ModelNotFoundException)->setModel(
                 get_class($this->entity->getModel())
             )
@@ -330,18 +322,17 @@ abstract class AbstractRepository implements IRepository
 
     /**
      * 填充标准条件对象
-     *
-     * @param [type] ...$criteria
-     * @return IRepository
+     * @param mixed ...$criteria
+     * @return mixed
      */
     public function withCriteria(...$criteria)
     {
         $criteria = array_flatten($criteria);
-        $model = $this->entity;
+        $model    = $this->entity;
 
         foreach ($criteria as $item) {
             throw_if(
-                !$item instanceof ICriteria,
+                ! $item instanceof ICriteria ,
                 new IllegalCriteriaInstanceException()
             );
             $model = $item->apply($model);
@@ -360,7 +351,7 @@ abstract class AbstractRepository implements IRepository
     public function toEntity()
     {
         throw_if(
-            !$this instanceof IRepository,
+            ! $this instanceof IRepository ,
             new RepositoryCastFailException()
         );
 
@@ -413,16 +404,16 @@ abstract class AbstractRepository implements IRepository
         DB::commit();
     }
 
+
     /**
      * where条件的组装
-     *
      * @param array $condition
-     * @return IRepository
+     * @return Builder
      */
     protected function setWhere(array $condition)
     {
         foreach ($condition as $item) {
-            if (!is_array($item)) {
+            if (! is_array($item)) {
                 $this->entity = $this->setConditions($condition);
                 break;
             }
@@ -444,13 +435,13 @@ abstract class AbstractRepository implements IRepository
         $count = count($condition);
 
         throw_if(
-            $count < 2,
+            $count < 2 ,
             new NotEnoughWhereParamsException()
         );
 
         return $this->entity->where(
-            $condition[0],
-            $condition[1],
+            $condition[0] ,
+            $condition[1] ,
             $condition[2] ?? null
         );
     }

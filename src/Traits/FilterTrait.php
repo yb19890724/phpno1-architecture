@@ -4,7 +4,7 @@ namespace Phpno1\Architecture\Traits;
 
 use Phpno1\Architecture\Exceptions\IllegalFilterInstanceException;
 use Phpno1\Architecture\Filters\{
-    IFilter,
+    IFilter ,
     IOrder
 };
 
@@ -42,11 +42,11 @@ trait FilterTrait
      * @param [type] $filterList
      * @return $this
      */
-    public function init($entity, $filterList)
+    public function init($entity , $filterList)
     {
         $this->orderConfigs = config('architecture.order');
-        $this->entity = $entity;
-        $this->filterList = $filterList;
+        $this->entity       = $entity;
+        $this->filterList   = $filterList;
 
         return $this;
     }
@@ -56,7 +56,7 @@ trait FilterTrait
      *
      * @return array
      */
-    protected function getSearchable()
+    protected function getSearchAble()
     {
         //获取path params 合并到request里面
         request()->merge(request()->route()->parameters());
@@ -72,8 +72,8 @@ trait FilterTrait
      */
     public function doFilter()
     {
-        foreach ($this->getSearchable() as $key => $item) {
-            $this->entity = $this->resolveFilter($key)->filter($this->entity, $item);
+        foreach ($this->getSearchAble() as $key => $item) {
+            $this->entity = $this->resolveFilter($key)->filter($this->entity , $item);
         }
 
         return $this;
@@ -87,10 +87,10 @@ trait FilterTrait
     protected function getOrderAble()
     {
         $request = [];
-        if (!empty($this->orderConfigs) && is_array($this->orderConfigs)) {
-            $request = array_intersect(request()->keys(), $this->orderConfigs);
+        if (! empty($this->orderConfigs) && is_array($this->orderConfigs)) {
+            $request = array_intersect(request()->keys() , $this->orderConfigs);
         }
-        return !empty($request) ? request()->only($request) : [];
+        return ! empty($request) ? request()->only($request) : [];
     }
 
     /**
@@ -100,12 +100,11 @@ trait FilterTrait
      */
     public function doOrder()
     {
-        //$orderInfo = $this->getOrderable();
-        $orderInfo = array_only($this->getOrderable(),array_keys($this->filterList));
+        $orderInfo = array_only($this->getOrderAble() , array_keys($this->filterList));
 
-        if (!empty($orderInfo)) {
+        if (! empty($orderInfo)) {
             foreach ($orderInfo as $key => $value) {
-                $this->entity = $this->resolveOrder($key)->order($this->entity, $value);
+                $this->entity = $this->resolveOrder($key)->order($this->entity , $value);
             }
         }
         return $this;
@@ -132,7 +131,7 @@ trait FilterTrait
     {
         $filter = new $this->filters[$filterName]();
         throw_if(
-            !$filter instanceof IFilter,
+            ! $filter instanceof IFilter ,
             new IllegalFilterInstanceException()
         );
 
@@ -150,7 +149,7 @@ trait FilterTrait
         $order = new $this->filters[$orderName];
 
         throw_if(
-            !$order instanceof IOrder,
+            ! $order instanceof IOrder ,
             new IllegalFilterInstanceException()
         );
 
